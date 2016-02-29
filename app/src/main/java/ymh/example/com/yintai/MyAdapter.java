@@ -87,6 +87,7 @@ class MyAdapter extends BaseAdapter {
         btn.setTextColor(context.getResources().getColor(R.color.black));
         btn.setClickable(false);
         btn.setFocusable(false);
+
         return btn;
     }
 }

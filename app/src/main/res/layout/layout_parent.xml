@@ -5,9 +5,12 @@
     android:orientation="vertical" >
 
     <TextView
+        android:paddingTop="55dp"
         android:id="@+id/parent_textview"
+        android:textSize="40sp"
+        android:paddingBottom="55dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center" />
 

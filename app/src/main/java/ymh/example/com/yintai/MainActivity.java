@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
 //            }
 //        });
         mainlistview.setGroupIndicator(null);
-        mainlistview.
+//        mainlistview.
 //        mainlistview.setDividerHeight(30);
 //        mainlistview.setBackgroundResource(R.color.black);
 //        View view = View.inflate(this, R.layout.layout_parent, null);
@@ -172,7 +172,7 @@ public class MainActivity extends Activity {
             TextView tv = (TextView) convertView.findViewById(R.id.parent_textview);
             tv.setText(MainActivity.this.parent.get(groupPosition));
             tv.setTextColor(getResources().getColor(R.color.bg_gray));
-            tv.setTextSize(18);
+//            tv.setTextSize(28);
             return tv;
         }
 
