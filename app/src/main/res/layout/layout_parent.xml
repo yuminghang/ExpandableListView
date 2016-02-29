@@ -5,10 +5,10 @@
     android:orientation="vertical" >
 
     <TextView
-        android:paddingTop="55dp"
+        android:paddingTop="70px"
         android:id="@+id/parent_textview"
-        android:textSize="40sp"
-        android:paddingBottom="55dp"
+        android:textSize="54px"
+        android:paddingBottom="70px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

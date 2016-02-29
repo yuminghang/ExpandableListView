@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
     private int imgs;
     private MyListAdapter myListAdapter;
     private TextView parent_textview;
+    private boolean isOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,40 +40,24 @@ public class MainActivity extends Activity {
         initData();
         myListAdapter = new MyListAdapter();
         mainlistview.setAdapter(myListAdapter);
-//        mainlistview.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-//            @Override
-//            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-//                Toast.makeText(MainActivity.this, "hshaha" + childPosition + groupPosition, Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//        });
         mainlistview.setGroupIndicator(null);
-//        mainlistview.
-//        mainlistview.setDividerHeight(30);
-//        mainlistview.setBackgroundResource(R.color.black);
-//        View view = View.inflate(this, R.layout.layout_parent, null);
-//        parent_textview = (TextView) view.findViewById(R.id.parent_textview);
 //        mainlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 ////                view.setBackgroundResource(R.color.black);
-//                mainlistview.collapseGroup(1 - position);
 //                Toast.makeText(MainActivity.this, ";;" + position, Toast.LENGTH_SHORT).show();
 //            }
 //        });
-//        mainlistview.setSelectedGroup(0);
-//        /**
-//         * 关闭其他父group
-//         */
-//        mainlistview.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-//            @Override
-//            public void onGroupExpand(int groupPosition) {
-//                mainlistview.collapseGroup(1 - groupPosition);
-//            }
-//        });
-    }
-//    mainlistview.setOnClickListener()
+        mainlistview.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+                Toast.makeText(MainActivity.this, "哈哈哈", Toast.LENGTH_SHORT).show();
+                isOpen = !isOpen;
+                return false;
+            }
+        });
 
+    }
 
     // 初始化数据
     public void initData() {
@@ -93,8 +78,6 @@ public class MainActivity extends Activity {
         list2.add("child2-2");
         list2.add("child2-3");
         map.put("字母查找", list2);
-
-
     }
 
     class MyListAdapter extends BaseExpandableListAdapter implements AdapterView.OnItemClickListener {
@@ -130,14 +113,13 @@ public class MainActivity extends Activity {
             gv.setAdapter(adatper);// 设置菜单Adapter
             gv.setOnItemClickListener(this);
             adatper.notifyDataSetChanged();
+
             return convertView;
         }
 
         //获取当前父item下的子item的个数
         @Override
         public int getChildrenCount(int groupPosition) {
-            String key = parent.get(groupPosition);
-            int size = map.get(key).size();
             if (groupPosition == 1) {
                 return 7;
             } else {

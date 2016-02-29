@@ -50,7 +50,7 @@ class MyAdapter extends BaseAdapter {
             btn = new Button(context);
 //            btn.setAdjustViewBounds(false);//设置边界对齐
 //            btn.setScaleType(ImageView.ScaleType.CENTER_CROP);//设置刻度的类型
-            btn.setPadding(8, 8, 8, 8);//设置间距
+//            btn.setPadding(8, 8, 8, 8);//设置间距
         } else {
             btn = (Button) convertView;
         }
@@ -73,13 +73,13 @@ class MyAdapter extends BaseAdapter {
 //            btn.setWidth(15);
 //            btn.setWidth(15);
             btn.setBackgroundResource(R.drawable.circle_button_big);//为ImageView设置图片资源
-            btn.setLayoutParams(new GridView.LayoutParams(200, 200));//设置ImageView对象布局
+            btn.setLayoutParams(new GridView.LayoutParams(120, 120));//设置ImageView对象布局
 
         } else {
             char pos = (char) (position += 65 + (childPos * 4));
             s = String.valueOf(pos);
             btn.setBackgroundResource(R.drawable.circle_button);//为ImageView设置图片资源
-            btn.setLayoutParams(new GridView.LayoutParams(150, 150));//设置ImageView对象布局
+            btn.setLayoutParams(new GridView.LayoutParams(80, 80));//设置ImageView对象布局
 
         }
 

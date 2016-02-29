@@ -6,10 +6,10 @@
 
     <ExpandableListView
         android:id="@+id/main_expandablelistview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:background="@color/gary5"
-        android:cacheColorHint="@color/black"
+        android:cacheColorHint="@color/bg_gray"
         android:divider="@null"
         android:listSelector="@color/black" />
 
